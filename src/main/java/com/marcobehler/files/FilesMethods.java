@@ -20,8 +20,8 @@ public class FilesMethods {
         FileTime lastModifiedTime = Files.getLastModifiedTime(path);
         System.out.println("lastModifiedTime = " + lastModifiedTime);
 
-        long mismatch = Files.mismatch(path, Paths.get("c:\\dev\\whatever.txt"));
-        System.out.println("mismatch = " + mismatch);
+        long mismatchIndex = Files.mismatch(path, Paths.get("c:\\dev\\whatever.txt"));
+        System.out.println("mismatch = " + mismatchIndex);
 
         UserPrincipal owner = Files.getOwner(path);
         System.out.println("owner = " + owner);
@@ -31,6 +31,12 @@ public class FilesMethods {
 
         Path tempFile2 = Files.createTempFile(path.getParent(), "somePrefixOrNull", ".jpg");
         System.out.println("tempFile2 = " + tempFile2);
+
+        Path newDirectory = Files.createDirectories(path.getParent().resolve("some/new/dir"));
+        System.out.println("newDirectory = " + newDirectory);
+
+        Path newFile = Files.createFile(newDirectory.resolve("emptyFile.txt"));
+        System.out.println("newFile = " + newFile);
 
         try {
             Set<PosixFilePermission> permissions = Files.getPosixFilePermissions(path);

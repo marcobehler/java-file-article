@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class CreatingReading {
+public class Locating {
 
     public static void main(String[] args) throws URISyntaxException {
 
