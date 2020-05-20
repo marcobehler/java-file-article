@@ -13,6 +13,7 @@ public class JimFSSystem {
     public static void main(String[] args) throws IOException {
 
         try (FileSystem fileSystem = Jimfs.newFileSystem(Configuration.unix());) {
+
             Path inMemoryFile = fileSystem.getPath("/tmp/somefile.txt");
             Files.writeString(inMemoryFile, "Hello World");
 
