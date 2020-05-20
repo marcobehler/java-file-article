@@ -9,7 +9,7 @@ public class CreatingReading {
 
     public static void main(String[] args) throws URISyntaxException {
 
-        // Java11+
+        // Java11+  : Path.of()
 
         Path path = Path.of("c:\\dev\\licenses\\windows\\readme.txt");
         System.out.println(path);
@@ -26,11 +26,11 @@ public class CreatingReading {
         path = Path.of(new URI("file:///c:/dev/licenses/windows/readme.txt"));
         System.out.println(path);
 
-        // Java < 11
+        // Java < 11 equivalent: Paths.get()
         path = Paths.get("c:/dev/licenses/windows/readme.txt");
         System.out.println(path);
 
-        // etc
+        // etc...
     }
 
 /*
