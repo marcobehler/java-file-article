@@ -1,6 +1,6 @@
 package com.marcobehler.files;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,8 +32,13 @@ public class WritingFiles {
                 StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
         System.out.println("oneMoreUtf8File = " + oneMoreUtf8File);
 
-        // Files.newOutputStream();
-        // Files.newBufferedReader()
 
+        try (BufferedWriter bufferedWriter = Files.newBufferedWriter(utfFile)) {
+            // handle reader
+        }
+
+        try (OutputStream os = Files.newOutputStream(utfFile)) {
+            // handle outputstream
+        }
     }
 }
