@@ -11,7 +11,7 @@ public class MemoryFileSystem {
 
     public static void main(String[] args) throws IOException {
 
-        try (FileSystem fileSystem = MemoryFileSystemBuilder.newEmpty().build()) {
+        try (FileSystem fileSystem = MemoryFileSystemBuilder.newMacOs().build()) {
 
             Path inMemoryFile = fileSystem.getPath("/somefile.txt");
             Files.writeString(inMemoryFile, "Hello World");
