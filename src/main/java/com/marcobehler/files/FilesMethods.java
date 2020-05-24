@@ -45,5 +45,8 @@ public class FilesMethods {
             System.err.println("Looks like you're not running on a posix file system");
         }
 
+
+        Path tmpDirectory = Files.createTempDirectory("prefix");
+        System.out.println("tmpDirectory = " + tmpDirectory);
     }
 }
