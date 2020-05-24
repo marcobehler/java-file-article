@@ -28,7 +28,7 @@ public class DeleteMoveFiles {
 
 
         Path tmpDir = Files.createTempDirectory("somePrefix");
-        Path tmpFile = Files.createTempFile(tmpDir, "somePrefix", ".txt");
+        Path fileInTmpDir = Files.createTempFile(tmpDir, "somePrefix", ".txt");
 
         try {
             Files.delete(tmpDir);
