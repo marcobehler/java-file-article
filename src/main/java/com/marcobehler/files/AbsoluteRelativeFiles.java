@@ -17,6 +17,9 @@ public class AbsoluteRelativeFiles {
         System.out.println("p3 = " + p3);
         System.out.println("p3.isAbsolute() = " + p3.isAbsolute());
 
+        Path relativizedPath = Paths.get("C:\\dev\\java-file-article\\").relativize(p3);
+        System.out.println("relativizedPath = " + relativizedPath);
+
         // p.isAbsolute() = false
         //p2 = C:\dev\java-file-article\.\src\main\java\..\resources\some.properties
         //p2.isAbsolute() = true
@@ -24,8 +27,7 @@ public class AbsoluteRelativeFiles {
         //p3.isAbsolute() = true
         //relativizedPath = src\main\resources\some.properties
 
-        Path relativizedPath = Paths.get("C:\\dev\\java-file-article\\").relativize(p3);
-        System.out.println("relativizedPath = " + relativizedPath);
+
 
     }
 
