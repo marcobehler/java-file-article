@@ -10,11 +10,16 @@ public class ListingFiles {
 
         Path tmpDirectory = Files.createTempDirectory("somePrefix");
 
-        Files.list(tmpDirectory).forEach(System.out::println);
+        try (var files = Files.list(tmpDirectory)) {
+            files.forEach(System.out::println);
+        }
 
-        Files.newDirectoryStream(tmpDirectory, "*.txt").forEach(System.out::println);
+        try (var files = Files.newDirectoryStream(tmpDirectory, "*.txt")) {
+            files.forEach(System.out::println);
+        }
 
-        Files.walk(tmpDirectory).forEach(System.out::println);
-
+        try (var files = Files.walk(tmpDirectory)) {
+            files.forEach(System.out::println);
+        }
     }
 }
